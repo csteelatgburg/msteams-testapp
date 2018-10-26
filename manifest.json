@@ -1,0 +1,76 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.3",
+    "version": "1.0.0",
+    "id": "f7146555-8a50-45f3-832e-507c80e34e26",
+    "packageName": "com.chucksteel.teams.testapp",
+    "developer": {
+        "name": "Contoso",
+        "websiteUrl": "https://teams-testapp.azurewebsites.net/",
+        "privacyUrl": "https://teams-testapp.azurewebsites.net/privacy",
+        "termsOfUseUrl": "https://teams-testapp.azurewebsites.net/termsofuse"
+    },
+    "name": {
+        "short": "testapp",
+        "full": "Teams app for developing and testing stuff"
+    },
+    "description": {
+        "short": "This app is used for development and testing functions.",
+        "full": "This app is being created to learn how to create Teams Apps. It will also be used to test functionality and development of other apps in the future."
+    },
+    "icons": {
+        "outline": "contoso20x20.png",
+        "color": "contoso96x96.png"
+    },
+    "accentColor": "#60A18E",
+    "staticTabs": [{
+        "entityId": "com.chucksteel.teams.testapp.hellotab",
+        "name": "Hello Tab",
+        "contentUrl": "https://teams-testapp.azurewebsites.net/hello",
+        "scopes": [
+            "personal"
+        ]
+    }],
+    "configurableTabs": [{
+        "configurationUrl": "https://teams-testapp.azurewebsites.net/configure",
+        "canUpdateConfiguration": true,
+        "scopes": [
+            "team"
+        ]
+    }],
+    "bots": [{
+        "botId": "ec37dfd2-c18f-47cf-bcb3-5a2c09de748c",
+        "needsChannelSelector": false,
+        "isNotificationOnly": false,
+        "scopes": [
+            "team",
+            "personal"
+        ]
+    }],
+    "composeExtensions": [{
+        "botId": "ec37dfd2-c18f-47cf-bcb3-5a2c09de748c",
+        "scopes": [
+            "personal",
+            "team"
+        ],
+        "commands": [{
+            "id": "getRandomText",
+            "description": "Gets some random text and images that you can insert in messages for fun.",
+            "title": "Get some random text for fun",
+            "initialRun": true,
+            "parameters": [{
+                "name": "cardTitle",
+                "description": "Card title to use",
+                "title": "Card title"
+            }]
+        }]
+    }],
+    "permissions": [
+      "identity",
+      "messageTeamMembers"
+  ],
+    "validDomains": [
+      "teams-testapp.azurewebsites.net",
+      
+    ]
+}
